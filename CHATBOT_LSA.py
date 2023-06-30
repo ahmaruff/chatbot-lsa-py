@@ -143,7 +143,7 @@ def talk_to_tau(question: str):
         
             return reply, r_score
         
-def lsa(sentence: str):
+def lsa(sentence):
     if(sentence.lower() != 'bye'):
         if(greeting(sentence.lower()) != None):
             return greeting(sentence.lower())
