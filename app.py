@@ -24,9 +24,9 @@ def health():
         'errors' : None
     })
 
-@app.route('/lsa-get', methods=['GET'])
+@app.route('/lsa', methods=['GET'])
 def lsa_get():
-    query = request.args.get('q')
+    query = request.args.get('query')
     payload = get_lsa_response(query)
     print(type(payload))
     if(type(payload) == str):
@@ -40,7 +40,7 @@ def lsa_get():
     else:
         return jsonify(payload)
 
-@app.route('/lsa-post', methods=['POST'])
+@app.route('/lsa', methods=['POST'])
 def lsa_post():
     if not request.json:
         return jsonify({
@@ -49,7 +49,7 @@ def lsa_post():
         })
     else:
         print(request.get_json())
-        payload = get_lsa_response(request.get_json())
+        payload = get_lsa_response(request.get_json()['query'])
         print(type(payload))
         if(type(payload) == str):
             return jsonify({
