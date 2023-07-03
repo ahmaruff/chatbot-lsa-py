@@ -11,19 +11,31 @@
    2. jika mau mode web api `python3 app.py`
 
 ## route untuk web api
-route :`/lsa`, bisa pake method get maupun post
+route :`/lsa`, bisa pake method GET maupun POST
 
+endpoint: `/lsa`  
+method `GET`  
+parameter: `query="your message"`  
 
-method `GET`
-`/lsa?query="<<insert question here>>"`
+endpoint: `/lsa`  
+method `POST`  
+request body:
 
-method `POST`
-`/lsa`
+```json
+{
+    "query" : "<<insert your question here>>"
+}
+```
+
+## upload dataset
+
+endpoint : `/uploads`  
+method `POST`  
 
 request body:
 
 ```json
 {
-    query : "<<insert your question here>>"
+    "dataset" : "<<yourfile>>"
 }
 ```

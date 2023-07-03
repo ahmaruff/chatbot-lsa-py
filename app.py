@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import os
 from werkzeug.utils import secure_filename
+import csv
 
 #!usr/bin/python3
 import os
@@ -61,6 +62,58 @@ def lsa_post():
             })
         else:
             return jsonify(payload)
+
+@app.route('/uploads', methods=['POST'])
+def upload_dataset():
+    if 'dataset' not in request.files:
+        return jsonify({
+            "status": 400,
+            "message": "missing dataset" 
+        })
+
+    file = request.files['dataset']
+
+    # Mengecek apakah file memiliki ekstensi .csv
+    if not file.filename.endswith('.csv'):
+        return jsonify({
+            "status": 400,
+            "message": "file must be using csv format"
+        })
+    
+    # save temporary
+    tmp_path = os.getcwd() + '/tmp_dataset.csv'
+    file.save(tmp_path)
+    
+    # dataset baru
+    new_dataset = []
+    with open(tmp_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader, None) #skip header
+        new_dataset = list(reader)
+
+    # remove tmp csv
+    os.remove(tmp_path)
+    
+    # buka dataset lama
+    existing_dataset_path = os.getcwd()+'/dataset/dataset.csv'
+    existing_dataset = []
+    with open(existing_dataset_path, 'r') as existing_file:
+        reader = csv.reader(existing_file)
+        existing_dataset = list(reader)
+    
+    # combine dataset lama dan dataset baru
+    combined_dataset = existing_dataset + new_dataset
+
+    # write ke file dataset
+    with open(existing_dataset_path, 'w', newline='') as output_file:
+        writer = csv.writer(output_file)
+        writer.writerows(combined_dataset)
+
+    return jsonify({
+        "status": 200,
+        "message": "dataset uploaded successfully"
+    })
+
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
