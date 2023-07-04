@@ -5,10 +5,16 @@ import csv
 
 #!usr/bin/python3
 import os
-from CHATBOT_LSA import lsa
+# from CHATBOT_LSA import lsa
+from LsaChatbot import LsaChatbot
+
+stopword_path = os.getcwd() + '/stopword.txt'
+dataset_path = os.getcwd() + '/dataset/dataset.csv'
+
+lsaChatbot = LsaChatbot(stopword_path, dataset_path)
 
 def get_lsa_response(input_text):
-    lsa_response = lsa(input_text)
+    lsa_response = lsaChatbot.lsa(input_text)
     return lsa_response
     
     file_path = os.getcwd() + '/fallback_sentences.txt'
@@ -29,12 +35,12 @@ def health():
 def lsa_get():
     query = request.args.get('query')
     payload = get_lsa_response(query)
-    print(type(payload))
     if(type(payload) == str):
         return jsonify({
+            'status' : 200,
             'result' : {
-                'messages' : {
-                    'speech' : payload
+                'payload' : {
+                    'message' : payload
                 }
             }
         })
@@ -49,14 +55,13 @@ def lsa_post():
             "message": "Bar request. Request has no body"
         })
     else:
-        print(request.get_json())
         payload = get_lsa_response(request.get_json()['query'])
-        print(type(payload))
         if(type(payload) == str):
             return jsonify({
+                'status' : 200,
                 'result' : {
-                    'messages' : {
-                        'speech' : payload
+                    'payload' : {
+                        'message' : payload
                     }
                 }
             })
@@ -114,6 +119,13 @@ def upload_dataset():
         "message": "dataset uploaded successfully"
     })
 
+@app.route('/train', methods=['GET'])
+def train():
+    lsaChatbot.train()
+    return jsonify({
+        "status": 200,
+        "message": "dataset re-trained successfully"
+    })
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
