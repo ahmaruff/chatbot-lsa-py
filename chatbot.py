@@ -2,13 +2,18 @@
 
 import os
 
-from CHATBOT_LSA import lsa
+from LsaChatbot import LsaChatbot
+
+stopword_path = os.getcwd() + '/stopword.txt'
+dataset_path = os.getcwd() + '/dataset/dataset.csv'
+
+lsaChatbot = LsaChatbot(stopword_path, dataset_path)
 
 while True:
     input_text = input("User says > ")
 
     print(input_text)
-    lsa_response = lsa(input_text)
+    lsa_response = lsaChatbot.lsa(input_text)
     print("Bot says > ", lsa_response)
 
     file_path = os.getcwd() + '/fallback_sentences.txt'
