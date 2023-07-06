@@ -22,3 +22,4 @@ Simple Chatbot web API using Latent Semantic Analysis Algorithm
 | `/lsa` | POST | `{query:your question}` | chatbot |
 | `/uploads` | POST | `{dataset:yourfile.csv}` | add new dataset |
 | `/train` | GET | -- | re-train dataset |
+| `/dataset` | GET | -- | return dataset |

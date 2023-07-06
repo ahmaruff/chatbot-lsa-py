@@ -127,6 +127,26 @@ def train():
         "message": "dataset re-trained successfully"
     })
 
+@app.route('/dataset', methods=['GET'])
+def get_dataset():
+    data_path = os.getcwd() + '/dataset/dataset.csv'
+    # data_string = open(data_path, 'r')
+    dataset = []
+    with open(data_path, 'r') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            data = {
+                'message' : row['MESSAGE'],
+                'response' : row['RESPONSE']
+            }
+            dataset.append(data)
+    return jsonify({
+        'status' : 200,
+        'result': {
+            'payload' : dataset
+        }
+    })
+
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
