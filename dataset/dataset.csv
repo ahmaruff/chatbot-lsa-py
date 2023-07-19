@@ -1,20 +1,60 @@
 MESSAGE,RESPONSE
-cara mengganti password,"Masuk Google Chrome Ketik 192.168.0.1 untuk Username sama password untuk login = user setelah masuk Klik Network. Klik bagian Wlan. Klik bagian Security Setelah diganti klik submit"
-cara mengganti kata sandi,"Masuk Google Chrome Ketik 192.168.0.1 untuk Username sama password untuk login = user setelah masuk Klik Network. Klik bagian Wlan. Klik bagian Security Setelah diganti klik submit"
-cara mengganti nama WiFi,"Masuk Google Chrome Ketik 192.168.0.1 untuk Username sama password untuk login = user setelah masuk Klik Network. Klik bagian Wlan. Klik bagian SSID setting Setelah di ganti klik submit"
-Pembayaran wifi bisa di transfer,"Iya bisa di transfer dengan no rekening MANDIRI : 1850004160823"
-minta norek,"Iya bisa di transfer dengan no rekening MANDIRI : 1850004160823"
-minta nomor rekening,"Iya bisa di transfer dengan no rekening MANDIRI : 1850004160823"
-kirim no rekening,"Iya bisa di transfer dengan no rekening MANDIRI : 1850004160823"
-kirim nomor rekening,"Iya bisa di transfer dengan no rekening MANDIRI : 1850004160823"
-wifi kadang terkoneksi kadang tidak, "Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami secara langsung"
-wifi mati,"Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami secara langsung"
-jaringan hilang,"Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami secara langsung"
-Tidak terkoneksi wifinya,"Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami secara langsung"
-Wifinya terkoneksi ada lampu Merah di modemnya,"Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami secara langsung"
-Internet wifinya tidak terkoneksi,"Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami secara langsung"
-indikator merah LOS pada wifi nyala,"kemungkinan ada kerusakan pada device atau ada kabel terputus. akan kami segera agendakan pengecekan di lokasi. Silakan hubungi CS kami secara langsung"
-Internet Lemot,"untuk mengatasi internet lambat Coba dikurangi penggunaan usernya agar pemakaianya stabil dan lancar. atau upgrade ke paket yang lebih tinggi"
-wifinya lemot,"untuk mengatasi internet lambat Coba dikurangi penggunaan usernya agar pemakaianya stabil dan lancar. atau upgrade ke paket yang lebih tinggi"
-Internet Lemot,"untuk mengatasi internet lambat Coba dikurangi penggunaan usernya agar pemakaianya stabil dan lancar. atau upgrade ke paket yang lebih tinggi"
-wifinya lemot,"untuk mengatasi internet lambat Coba dikurangi penggunaan usernya agar pemakaianya stabil dan lancar. atau upgrade ke paket yang lebih tinggi"
+halo,"halo, ada yang bisa kami bantu?"
+saya mau bertanya,"halo, ada yang bisa kami bantu?"
+bertanya halo,"halo, ada yang bisa kami bantu?"
+selamat pagi,"Selamat Pagi, ada yang bisa kami bantu?"
+selamat siang,"Selamat Siang, ada yang bisa kami bantu?"
+selamat sore,"Selamat Sore, ada yang bisa kami bantu?"
+selamat malam,"Selamat Malam, ada yang bisa kami bantu?"
+pagi,"Selamat Pagi, ada yang bisa kami bantu?"
+siang,"Selamat Siang, ada yang bisa kami bantu?"
+sore,"Selamat Sore, ada yang bisa kami bantu?"
+malam,"Selamat Malam, ada yang bisa kami bantu?"
+cara mengganti password,Masuk Google Chrome Ketik 192.168.0.1 untuk Username sama password untuk login = user setelah masuk Klik Network. Klik bagian Wlan. Klik bagian Security Setelah diganti klik submit
+cara mengganti kata sandi,Masuk Google Chrome Ketik 192.168.0.1 untuk Username sama password untuk login = user setelah masuk Klik Network. Klik bagian Wlan. Klik bagian Security Setelah diganti klik submit
+cara mengganti nama WiFi,Masuk Google Chrome Ketik 192.168.0.1 untuk Username sama password untuk login = user setelah masuk Klik Network. Klik bagian Wlan. Klik bagian SSID setting Setelah di ganti klik submit
+Pembayaran wifi bisa di transfer,Iya bisa di transfer dengan no rekening MANDIRI : 1850004160823
+minta norek,Iya bisa di transfer dengan no rekening MANDIRI : 1850004160823
+minta nomor rekening,Iya bisa di transfer dengan no rekening MANDIRI : 1850004160823
+kirim no rekening,Iya bisa di transfer dengan no rekening MANDIRI : 1850004160823
+kirim nomor rekening,Iya bisa di transfer dengan no rekening MANDIRI : 1850004160823
+wifi kadang terkoneksi kadang tidak," ""Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami melalui menu pengaduan"""
+wifi mati,Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami melalui menu pengaduan
+jaringan hilang,Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami melalui menu pengaduan
+Tidak terkoneksi wifinya,Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami melalui menu pengaduan
+Wifinya terkoneksi ada lampu Merah di modemnya,Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami melalui menu pengaduan
+Internet wifinya tidak terkoneksi,Mohon maaf atas ketidaknyamananya akan kami cek dari server. silakan hubungi CS kami melalui menu pengaduan
+indikator merah LOS pada wifi nyala,kemungkinan ada kerusakan pada device atau ada kabel terputus. akan kami segera agendakan pengecekan di lokasi. Silakan hubungi CS kami melalui menu pengaduan
+Internet Lemot,untuk mengatasi internet lambat Coba dikurangi penggunaan usernya agar pemakaianya stabil dan lancar. atau upgrade ke paket yang lebih tinggi
+wifinya lemot,untuk mengatasi internet lambat Coba dikurangi penggunaan usernya agar pemakaianya stabil dan lancar. atau upgrade ke paket yang lebih tinggi
+Internet Lemot,untuk mengatasi internet lambat Coba dikurangi penggunaan usernya agar pemakaianya stabil dan lancar. atau upgrade ke paket yang lebih tinggi
+wifinya lemot,untuk mengatasi internet lambat Coba dikurangi penggunaan usernya agar pemakaianya stabil dan lancar. atau upgrade ke paket yang lebih tinggi
+Tidak ada koneksi dan modem ada indikator merah,Ketika indikator modem Los nyala merah. kemungkinan dikarenakan kabel dari odp ke modem putus. Silahkan hubungi CS melalui menu pengaduan
+Tidak ada koneksi tetapi lampu indikator nyala semua,Silahkan coba modemnya di restart. adaptor di lepas dari colokan listrik. tunggu berapa detik setelah itu dicolokkan lagi
+Modem mati tidak menyala,"Akan segera kami cek di lokasi, untuk pergantian alat. mohon hubungi CS melalui menu pengaduan"
+wifinya hilang nggak ada sinyal di hp saya kondisi modem hidup,Silahkan sampaikan masalah di menu pengaduan. nanti teknisi biar mengecek dilokasi
+Saya lupa passwordnya pelanggan atas nama alamat,silahkan hubungi CS melalui menu pengaduan untuk tindakan lebih lanjut
+Internetnya lemot padahal dipakai sedikit orang,coba di ganti password saja. barangkali kebobolan internetnya
+nggk konek lampu indikator LAN nggak nyala,kabel lanNya kemungkinan rusak/putus akan kami segera cek di lokasi silahkan hubungi CS kami melalui menu pengaduan
+ini internetnya nggak konek padahal lampu indikator nyala semua,ada kemungkinan anda belum melakukan pembayaran jika anda sudah melakukan pembayaran silahkan bisa hubungi CS kami melalui menu pengaduan
+wifinya mati gegara pas tadi ada petir setelah itu listrik mati dan setelah nyala gak konek dan modem mati,"Akan segera kami cek dilokasi, silakan hubungi CS melalui menu pengaduan"
+Untuk pembayaran wifinya saya tf yaa minta noreknya ada?,Iya bisa di transfer dengan no rekening\nMANDIRI : 1850004160823
+wifinya nggk konek modem terkadang ada indikator warna merah, Baik nanti segera di cek ke lokasi kemungkinan kabel nya yang bermasalah. silakan hubungi CS melalui menu pengaduan
+kabelnya wifi saya putus kemarin ada truk lewat kecantol jadi putus dan gak konek,Baik kami akan segera ke lokasi untuk penyambungan kabel silahkan hubungi CS melalui menu pengaduan
+info pemasangan baru mas lokasi wonosobo,Baik silahkan persiapkan persyaratan yaitu KTP
+wifinya enggak konek dan nama wifi menjadi Zte638,"itu karena mode,nya ke-reset. untuk mengetahui sandinya bisa di lihat di belakang modem"
+internetnya kenapa ya akhir akhir ini gak kaya biasanya kurang stabil tolong bisa kerumah saya tidak tahu apa apa,"Baik akan segera kami jadwalkan untuk pengecekan, silahkan hubungi CS melalui menu pengaduan"
+wifinya gak nyampai di lantai atas pak,solusi yang kami berikan adalah di tambah perangkat lagi di lantai atas soalnya untuk rumah yang 2 lantai kemungkinan sinyal melemah kalau sampai di lantai atas
+internetnya bisa di sambungkan ke tv pak?,bisa kalau tvnya sudah android. kalau belum android harus ada tambahan perangkat stb supaya terhubung ke TV
+ini internet saya gak bisa tersambung ke tv kenapa yaa?,coba di sambungkan ulang atau coba di ganti menggunakan kabel biar otomatis terhubung
+pembayaran wifinya bisa dobel,mohon maaf tidak bisa. pembayaran harus sesuai bulan berjalan. Telat pembayaran pada akhir bulan.
+saya mau berhenti berlangganan wifi,baik silahkan hubungi CS melalui menu pengaduan
+Jaringan tidak stabil,"coba restart modem"
+harus dekat dengan modem supaya dapet sinyal wifi,"kemungkinan ada masalah pada modem. akan kami cek ke lokasi. mohon hubungi CS melalui menu pengaduan"
+saya ingin pasang wifi baru,"silakan hubungi CS untuk informasi pemasangan jaringan baru"
+nama wifi berubah,"kemungkinan modem ter-reset. silakan cek password default-nya di bagian belakang modem"
+internet tidak konek,"Tidak konek kenapa? bisa di jelaskan"
+internet saya gak konek,"Tidak konek kenapa? bisa di jelaskan"
+di router ada tanda merah,"Itu kabelnya putus akan kami segera cek ke lokasi"
+ini pembayaran wifinya gimana,"bisa di transfer dengan no rekening MANDIRI : 1850004160823"
+internetnya lambat tidak bisa di pakai,"apakah penggunanya banyak"
