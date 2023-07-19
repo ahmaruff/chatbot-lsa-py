@@ -113,13 +113,13 @@ def upload_dataset():
         next(reader, None) #skip header
         new_dataset = list(tuple(line) for line in reader)
     
-    query_db('INSERT INTO datasets(message,response) VALUES(?,?)',new_dataset)
+    d = exec_db('INSERT INTO datasets(message,response) VALUES(?,?)',new_dataset)
 
     # remove tmp csv
     os.remove(tmp_path)
 
     return jsonify({
-        "message": "dataset uploaded successfully"
+        "message": d
     })
 
 @app.route('/train', methods=['GET'])
