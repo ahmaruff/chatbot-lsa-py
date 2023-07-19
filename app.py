@@ -35,55 +35,32 @@ def health():
 def lsa_get():
     query = request.args.get('query')
     payload = get_lsa_response(query)
-    if(type(payload) == str):
-        return jsonify({
-            'status' : 200,
-            'result' : {
-                'payload' : {
-                    'message' : payload
-                }
-            }
-        })
-    else:
-        return jsonify(payload)
+    return jsonify(payload)
 
 @app.route('/lsa', methods=['POST'])
 def lsa_post():
     if not request.json:
         return jsonify({
-            "status": 400,
             "message": "Bar request. Request has no body"
-        })
+        }), 400
     else:
         payload = get_lsa_response(request.get_json()['query'])
-        if(type(payload) == str):
-            return jsonify({
-                'status' : 200,
-                'result' : {
-                    'payload' : {
-                        'message' : payload
-                    }
-                }
-            })
-        else:
-            return jsonify(payload)
+        return jsonify(payload).status_code(200)
 
 @app.route('/uploads', methods=['POST'])
 def upload_dataset():
     if 'dataset' not in request.files:
         return jsonify({
-            "status": 400,
             "message": "missing dataset" 
-        })
+        }), 400
 
     file = request.files['dataset']
 
     # Mengecek apakah file memiliki ekstensi .csv
     if not file.filename.endswith('.csv'):
         return jsonify({
-            "status": 400,
             "message": "file must be using csv format"
-        })
+        }), 400
     
     # save temporary
     tmp_path = os.getcwd() + '/tmp_dataset.csv'
@@ -115,7 +92,6 @@ def upload_dataset():
         writer.writerows(combined_dataset)
 
     return jsonify({
-        "status": 200,
         "message": "dataset uploaded successfully"
     })
 
@@ -123,7 +99,6 @@ def upload_dataset():
 def train():
     lsaChatbot.train()
     return jsonify({
-        "status": 200,
         "message": "dataset re-trained successfully"
     })
 
@@ -141,7 +116,6 @@ def get_dataset():
             }
             dataset.append(data)
     return jsonify({
-        'status' : 200,
         'result': {
             'payload' : dataset
         }

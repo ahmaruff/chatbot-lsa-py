@@ -1,4 +1,5 @@
 import pandas as pd
+import json
 import random
 from Sastrapy.WordTokenize.Tokenize import tokenize
 from Sastrapy.Corpus.SlangConverter import SlangConverterMachine
@@ -89,10 +90,12 @@ class LsaChatbot:
         return self.trained
     
     # proses di chatbot ( input pertanyaan, cari data jawaban terdekat dengan model LSA yang dibuat sebelumnya)
-    def talk(self, question:str):
+    def talk(self, user_question:str):
+        payload = {}
         # PRE-PROCESS PERTANYAAN
-        tokens = self.pre_process(question)
-        text = " ".join(tokens)
+        u_q = str(user_question),
+        tokens = self.pre_process(user_question)
+        # text = " ".join(tokens)
 
         # DEFINE HASIL TRAINING DATA MODEL SEBELUMNYA
         dictionary = self.trained['dictionary']
@@ -111,7 +114,9 @@ class LsaChatbot:
         # jika tidak ditemukan hasilnya
         if not(vec_lsi):
             not_understood = "maaf, saya tidak paham yang anda maksud, bisa anda ulangi?"
-            payload = not_understood
+            payload = {
+                'message' : not_understood
+            } 
         else:
             # lihat urutan index terdekat (hasil perhitungan LSA)
             sims = index[vec_lsi]
@@ -135,16 +140,21 @@ class LsaChatbot:
                     if (r_index < len(question_data) - 3):
                         payload = [
                             {
-                                'message' : question_data[r_index],
-                            },{
-                                'message' : question_data[r_index+1],   
-                            },{
-                                'message' : question_data[r_index+2],
+                                'nearest_question' : question_data[r_index],
+                            },
+                            {
+                                'nearest_question' : question_data[r_index+1],
+                            },
+                            {
+                                'nearest_question' : question_data[r_index+2],
                             }
                         ]
+                        
                     else:
                         not_understood = "maaf, saya tidak paham yang anda maksud, bisa anda ulangi?"
-                        payload = not_understood
+                        payload = {
+                            'message' : not_understood,
+                        }
                 # jika similiarity lebih dari 0.8
                 else:
                     question_data = self.dataset['MESSAGE']
@@ -161,14 +171,21 @@ class LsaChatbot:
                 reply = str(self.dataset.iloc[:,1][r_index])
 
                 payload = {
-                    'question'  : question,
-                    'reply'     : reply,
+                    'nearest_question'  : question,
+                    'message'     : reply,
                 }
 
+
         return {
-            'status' : 200,
+            'user_question' : u_q,
+            'lsa' : {
+                'q_tokens' : tokens,
+                'dtm' : vec_bow,
+                'tfidf' : vec_tfidf,
+                'lsi' : str(vec_lsi),
+            },
             'result' : {
-                'payload' : payload
+                'payload' : payload,
             }
         }
     
