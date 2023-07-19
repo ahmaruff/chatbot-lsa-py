@@ -1,6 +1,5 @@
 import pandas as pd
-import json
-import random
+import sqlite3
 from Sastrapy.WordTokenize.Tokenize import tokenize
 from Sastrapy.Corpus.SlangConverter import SlangConverterMachine
 from Sastrapy.Corpus.StopwordRemover import StopwordRemoverMachine
@@ -9,9 +8,9 @@ from gensim import corpora, models, similarities
 
 class LsaChatbot:
     # Inisiasi objek LSA
-    def __init__(self, stopword_path: str, dataset_path: str):
-        # lokasi/alamat path dataset (dataset/dataset.csv)
-        self.dataset_path = dataset_path
+    def __init__(self, stopword_path: str, db_path: str):
+        # alamat DB
+        self.db_path = db_path
         # lokasi alamat path stopword (stopword.txt)
         self.stopword_path = stopword_path
 
@@ -29,7 +28,12 @@ class LsaChatbot:
             
     # load/mengambil dataset dari CSV
     def load_data(self):
-        return pd.read_csv(self.dataset_path)
+        db = sqlite3.connect(self.db_path)
+        dataset = pd.read_sql_query('SELECT message, response FROM datasets', db)
+        db.commit()
+        db.close()
+        return dataset
+    
     
     # PREPROCESSING DATASET
     def pre_process(self, text):
@@ -52,9 +56,9 @@ class LsaChatbot:
         self.trained = None
 
         # preprocess untuk setiap baris "message" pada dataset >> LIHAT PRE_PROCESS DIATAS
-        data['MESSAGE'] = data['MESSAGE'].apply(self.pre_process)
+        data['message'] = data['message'].apply(self.pre_process)
         # kumpulan data pertanyaan yang telah di pre-process
-        question = data['MESSAGE'] 
+        question = data['message'] 
 
         # ===== PERHITUNGAN LSA ========
         # Mapping kata/token unik menjadi id angka
@@ -135,7 +139,7 @@ class LsaChatbot:
                     r_index = int(reply_indexes['index'].loc[0])
                     r_score = float(reply_indexes['score'].loc[0])
 
-                    question_data = self.dataset['MESSAGE']
+                    question_data = self.dataset['message']
 
                     if (r_index < len(question_data) - 3):
                         payload = [
@@ -157,7 +161,7 @@ class LsaChatbot:
                         }
                 # jika similiarity lebih dari 0.8
                 else:
-                    question_data = self.dataset['MESSAGE']
+                    question_data = self.dataset['message']
                     index_s.append(str(sims[i][0]))
                     score_s.append(str(sims[i][1]))
                     # jawaban terbaik            
