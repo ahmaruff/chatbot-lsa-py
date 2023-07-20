@@ -142,17 +142,19 @@ class LsaChatbot:
                     question_data = self.dataset['message']
 
                     if (r_index < len(question_data) - 3):
-                        payload = [
-                            {
-                                'nearest_question' : question_data[r_index],
-                            },
-                            {
-                                'nearest_question' : question_data[r_index+1],
-                            },
-                            {
-                                'nearest_question' : question_data[r_index+2],
-                            }
-                        ]
+                        payload = {
+                            'quick_replies' : [
+                                {
+                                    'nearest_question' : question_data[r_index],
+                                },
+                                {
+                                    'nearest_question' : question_data[r_index+1],
+                                },
+                                {
+                                    'nearest_question' : question_data[r_index+2],
+                                }
+                            ],
+                        }
                         
                     else:
                         not_understood = "maaf, saya tidak paham yang anda maksud, bisa anda ulangi?"
