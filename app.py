@@ -7,7 +7,6 @@ from sqlite3 import Error
 
 #!usr/bin/python3
 import os
-# from CHATBOT_LSA import lsa
 from LsaChatbot import LsaChatbot
 
 # SQLITE DATABASE

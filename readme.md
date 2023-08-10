@@ -24,3 +24,7 @@ Simple Chatbot web API using Latent Semantic Analysis Algorithm
 | `/uploads` | POST | `{dataset:yourfile.csv}` | add new dataset |
 | `/train` | GET | -- | re-train dataset |
 | `/dataset` | GET | -- | return dataset |
+| `/dataset` | GET | `?id=1` | return single dataset by ID |
+| `/dataset/add` | POST | `message:<msg>,response:<resp>}` | create single dataset |
+| `/dataset/edit` | POST | `{id:<dataset_id>,message:<edited message>,response:<edited response>}` | edit/update single dataset |
+| `/dataset/delete` | GET | `?id=1` | delete single dataset by ID |
