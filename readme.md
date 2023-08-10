@@ -10,9 +10,10 @@ Simple Chatbot web API using Latent Semantic Analysis Algorithm
 3. aktifkan virtual environment `source venv/bin/activate` 
 4. install dependencies  
 `pip install -r requirements.txt`
-5. jalankan program
-   1. jika mau mode cli `python3 chatbot.py`
-   2. jika mau mode web api `python3 app.py`
+5. inisiasi database  
+`python3 init_db.py`
+6. jalankan program  
+`python3 app.py`
 
 ## route untuk web api
 
